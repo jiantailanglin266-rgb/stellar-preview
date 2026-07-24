@@ -1,0 +1,233 @@
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+  transform: none; /* デフォルトでは回転なし */
+}
+section {
+    margin-bottom: 6rem;
+}
+#section-00 .copy .img {
+    width: 400px;
+    height: 400px;
+    background-image: url("../images/img-01_sp.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 15rem auto 8rem;
+}
+.scroll {
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 1.5rem;
+}
+.scroll img {
+    width: 30px;
+    height: 70px;
+}
+section .head h2.en {
+    font-size: 4rem;
+    color: white;
+}
+section .head h2.ja {
+    font-size: 1rem;
+}
+section .head {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+section .lead-copy p {
+    font-size: 1.4rem;
+    text-align: center;
+}
+.underline-white {
+    background: linear-gradient(to top, white 10%, transparent 10%, transparent 100%);
+}
+#section-03 .lead-copy {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+#section-03 .lead-copy p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+#section-03 .lead-copy .img {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 3rem auto 2rem;
+}
+#section-03 .lead-copy img {
+    width: 100%; /* 親要素に合わせて画像をスケーリング */
+    height: auto; /* アスペクト比を維持 */
+    display: block; /* 不要な隙間を防ぐ */
+}
+#section-03 img[usemap] {
+    max-width: 100%; /* 親要素の幅にフィット */
+    height: auto; /* 縦横比を維持 */
+    display: block; /* 不要な余白を削除 */
+}
+#section-03 article .img {
+    margin-bottom: 2rem;
+}
+#section-03 article .txt {
+    padding: 0 3rem;
+}
+#section-03 article h3 {
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+#section-03 article {
+    padding: 2.5rem 0;
+	border-top: #FFFFFF 1px solid;
+}
+#section-03 article .img {
+    width: 50%;
+    margin: 0 auto 2rem;
+}
+#section-03 article .img img {}
+#section-04 {
+    width: 80%;
+    margin: 0 auto 5rem;
+}
+#section-04 .txt {
+    padding: 3rem 3rem 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    color: #EB5029;
+}
+#section-04 ul {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+#section-04 li {
+    float: left;
+    list-style: none;
+    width: 29%;
+    margin: 2%;
+}
+#section-04 img {
+    border-radius: 0.5rem;
+}
+#section-05 {
+    width: 80%;
+    margin: 0 auto 5rem;
+}
+#section-05 .img {
+    margin-bottom: 1rem;
+}
+#section-05 .img img {
+    border-radius: 1rem;
+}
+#section-05 {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 5rem;
+    ;
+}
+#section-05 h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+#section-05 .txt p {
+    font-size: 1.2rem;
+}
+@media screen and (max-aspect-ratio: 3/4) {
+  #bg-video {
+    transform: rotate(90deg);
+    transform-origin: center center;
+    width: 100vh; /* 横幅に合わせる（高さに注目） */
+    height: 100vw;
+    top: 50%;
+    left: 50%;
+    min-width: unset;
+    min-height: unset;
+    translate: -50% -50%;
+    object-fit: cover;
+  }
+}@media (min-width: 768px) {
+    #main {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    #section-00 .copy .img {
+        width: 900px;
+        height: 300px;
+        background-image: url("../images/img-01.webp");
+        margin: 25rem auto 10rem;
+    }
+    #section-00 .attention .txt {
+        font-size: 0.8rem;
+    }
+    #section-01 {
+        width: 60%;
+        max-width: 700px;
+        margin-bottom: -4rem;
+    }
+    #section-02 {
+        width: 60%;
+        max-width: 700px;
+    }
+    #section-03 article .img {
+        width: 50%;
+    }
+    #section-03 article:nth-child(odd) .img {
+        float: left;
+        padding-right: 3rem;
+    }
+    #section-03 article:nth-child(even) .img {
+        float: right;
+        padding-left: 3rem;
+    }
+    #section-03 article:nth-child(odd) .img img {
+        float: right;
+    }
+    #section-03 article:nth-child(even) .img img {
+        float: left;
+    }
+    #section-03 article .txt {
+        width: 40%;
+        padding: 0;
+    }
+    #section-03 article:nth-child(odd) .txt {
+        float: left;
+    }
+    #section-03 article:nth-child(even) .txt {
+        float: right;
+    }
+    #section-03 article {
+        padding-top: 4rem;
+    }
+    #section-04 {
+        max-width: 1200px;
+        margin-bottom: 8rem;
+    }
+    #section-05 {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width: 767.999px) {
+    #section-01, #section-02 {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

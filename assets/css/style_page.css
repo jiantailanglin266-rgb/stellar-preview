@@ -1,0 +1,352 @@
+#page #main {
+    padding: 8rem 2rem 3rem 2rem;
+}
+#page article {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+#page .page-title {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+#page .page-title p.en {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 200;
+    letter-spacing: 3px;
+    line-height: 1.2;
+}
+#page .page-title h1 {
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+}
+#page #main h2.en {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    letter-spacing: 3px;
+    line-height: 1;
+}
+#page #main h3 {
+    text-align: center;
+    color: white;
+    margin: 0;
+    letter-spacing: 3px;
+    padding: 0;
+}
+/*  ABOUT  */
+#page.about #main {
+    width: 100%;
+    max-width: inherit;
+    padding: 8rem 0 3rem 0;
+    margin: 0 auto;
+}
+.about article h2 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.about .page-title p.txt {
+    color: #333333;
+}
+.about article.container-right, .about article.container-left {
+    background-color: white;
+    opacity: 0.8;
+    padding: 2rem;
+}
+.about article.container-right {
+    margin-left: 10%;
+    border-radius: 2rem 0 0 2rem;
+}
+.about article.container-left {
+    margin-right: 10%;
+    border-radius: 0 2rem 2rem 0;
+}
+.about #main .page-title p.txt {
+    text-align: left;
+}
+.about article.about-01 {
+    position: relative;
+    padding-top: 40px; /* 飛び出し分の余白 */
+    margin-top: 8rem;
+}
+.about article.about-01 h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+}
+.about article.about-02 {
+    position: relative;
+    padding-top: 40px; /* 飛び出し分の余白 */
+    margin-top: 8rem;
+}
+.about article.about-02 h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+}
+.about article.about-02 .photo {
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+}
+.about article.about-03 {
+    width: 90%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+}
+.about article.about-03 dt {
+    color: white;
+}
+.about article.about-03 dd {
+    color: #333333;
+    margin-bottom: 1rem;
+}
+.about article.about-03 .chart {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+/*  SERVICE  */
+.service .page-title .img {
+    margin-bottom: 1rem;
+}
+.service article.service-00 {
+    width: 100%;
+    margin: 0 auto;
+}
+.service article.service-01 {
+    width: 100%;
+    margin: 0 auto;
+}
+.service article.service-02 {
+    width: 100%;
+    margin: 0 auto;
+}
+.service #section-03 .lead-copy {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+.service #section-03 .lead-copy p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+.service #section-03 .lead-copy .img {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 3rem auto 2rem;
+}
+.service #section-03 .lead-copy img {
+    width: 100%; /* 親要素に合わせて画像をスケーリング */
+    height: auto; /* アスペクト比を維持 */
+    display: block; /* 不要な隙間を防ぐ */
+}
+.service #section-03 img[usemap] {
+    max-width: 100%; /* 親要素の幅にフィット */
+    height: auto; /* 縦横比を維持 */
+    display: block; /* 不要な余白を削除 */
+}
+.service #section-03 article .img {
+    margin-bottom: 2rem;
+}
+.service #section-03 article .txt {}
+.service #section-03 article p.head {
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+.service #section-03 article {
+    padding: 2.5rem 0;
+    border-top: #FFFFFF 1px solid;
+}
+.service #section-03 article .img {
+    width: 50%;
+    margin: 0 auto 2rem;
+}
+.service #section-03 article .img img {}
+/*  CLIENTS  */
+.clients .clients-01 li {
+    list-style: none;
+    float: left;
+    width: 29%;
+    margin: 2%;
+}
+.clients .clients-01 li:hover {
+    opacity: 0.6;
+}
+.clients .clients-01 ul {
+    padding: 0;
+    margin: 0;
+}
+.clients .client-article h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.3rem;
+}
+.clients .client-article {
+    border-bottom: 1px solid #A3A3A3;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+}
+.clients .client-article .image {
+    margin-bottom: 2rem;
+}
+/*  RECRUIT  */
+.recruit #main article {
+    border-bottom: 1px solid #FFFFFF;
+}
+.recruit #main article:last-of-type {
+    border-bottom: none;
+}
+.recruit #main ul {
+    padding-left: 0;
+}
+.recruit #main li {
+    list-style: none;
+}
+.recruit article h2 {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.recruit article.position p.job {
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    padding: 0.5rem 2rem;
+    margin: 1rem auto 1rem auto;
+    border-radius: 2rem;
+}
+.recruit article.person li {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    padding: 0.5rem 2rem;
+    display: block;
+    margin-top: 1rem;
+    border-radius: 3rem;
+}
+.recruit article .img {
+    margin-bottom: 1rem;
+}
+.recruit article .img img {
+    border-radius: 1rem;
+}
+@media (min-width: 768px) {
+    #page #main {
+        width: 70%;
+        max-width: 1000px;
+        padding: 12rem 2rem 3rem 2rem;
+        margin: 0 auto;
+    }
+    #page .page-title p.en {
+        font-size: 5rem;
+    }
+    #page #main p.ja {
+        margin-bottom: 3rem;
+    }
+    /*  ABOUT  */
+    #page.about #main {
+        width: 100%;
+        max-width: inherit;
+        padding: 12rem 0 3rem 0;
+        margin: 0 auto;
+    }
+    .about article.container-right {
+        background-color: white;
+        opacity: 0.8;
+        margin-left: 20%;
+        border-radius: 2rem 0 0 2rem;
+        padding: 60px 10%;
+        ;
+    }
+    .about article.container-left {
+        background-color: white;
+        opacity: 0.8;
+        margin-right: 20%;
+        border-radius: 0 2rem 2rem 0;
+        padding: 60px 10%;
+        ;
+    }
+    .about article.about-02 .photo {
+        max-width: 800px;
+    }
+    .about article.about-03 {
+        max-width: 800px;
+    }
+    .about article.about-03 dt {
+        text-align: left;
+        float: left;
+        width: 30%;
+        max-width: 200px;
+    }
+    .about article.about-03 dd {
+        text-align: left;
+        width: 70%;
+    }
+    .about article.about-03 .chart {
+        float: left;
+        width: 50%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding-top: 1rem;
+    }
+    /*  SERVICE  */
+    article.service-01 {
+        width: 800px;
+        margin: 0 auto;
+    }
+    article.service-02 {
+        width: 700px;
+        margin: 0 auto;
+    }
+    #section-03 article .img {
+        width: 50%;
+    }
+    #section-03 article:nth-child(odd) .img {
+        float: left;
+        padding-right: 3rem;
+    }
+    #section-03 article:nth-child(even) .img {
+        float: right;
+        padding-left: 3rem;
+    }
+    #section-03 article:nth-child(odd) .img img {
+        float: right;
+    }
+    #section-03 article:nth-child(even) .img img {
+        float: left;
+    }
+    #section-03 article .txt {
+        width: 50%;
+        padding: 0;
+    }
+    #section-03 article:nth-child(odd) .txt {
+        float: left;
+    }
+    #section-03 article:nth-child(even) .txt {
+        float: right;
+    }
+    #section-03 article {
+        padding-top: 4rem;
+    }
+    /*  CLIENTS  */
+}

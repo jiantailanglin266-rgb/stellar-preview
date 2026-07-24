@@ -1,0 +1,291 @@
+html {
+    font-size: 14px;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+body {
+    background-color: #ABCFDF;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.06rem;
+    color: #333333;
+    line-height: 1.8;
+}
+small {
+    font-size: .8em;
+}
+.pc {
+    display: none;
+}
+.mobile {
+    display: block;
+}
+.en {
+    font-family: "Arima", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+}
+header #logo {
+    position: absolute;
+    width: 120px;
+    max-width: 60%;
+    top: 20px;
+    left: 20px;
+}
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    z-index: 90;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    background-image: url("../images/menu-sp-off.webp");
+}
+#menu-btn-check {
+    display: none;
+}
+#menu-btn-check:checked ~ .menu-btn {
+    background-image: url("../images/menu-sp-on.webp");
+    transition: all 0.5s; /*アニメーション設定*/
+    /*メニューオープン時*/
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #333333;
+    opacity: 0.85;
+    transition: all 0.5s; /*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0; /*メニューを画面内へ*/
+}
+.menu-content ul {
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 100px;
+}
+.menu-content ul li {
+    list-style: none;
+    background-image: url("../images/allow_04.webp");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 0 20px 0 0;
+    transition: all 0.5s; /*アニメーション設定*/
+}
+.menu-content ul li.menu-s {
+    background-image: url("../images/allow_04.webp");
+    background-size: 14px;
+    padding: 0 20px 0 0;
+    transition: all 0.5s; /*アニメーション設定*/
+}
+.menu-content ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 10px 10px 32px;
+}
+.menu-content ul li.menu-s a {
+    width: 100%;
+    font-size: 1rem;
+}
+#menu-btn-check:checked ~ .menu-btn {
+    background-image: url("../images/menu-sp-on.webp");
+    transition: all 0.5s; /*アニメーション設定*/
+    /*メニューオープン時*/
+}
+header hr {
+    border-top: 1px solid #FFFFFF;
+    opacity: 0.3;
+    margin-right: 40px;
+}
+header .hamburger-menu .menu-contact {
+    margin-bottom: 1rem;
+}
+.btn-s, .btn-m, .btn-l {
+    text-align: center;
+    margin: 30px auto;
+}
+.btn-s a, .btn-m a, .btn-l a {
+    display: inline-block;
+    color: #FFFFFF;
+    font-weight: 600;
+    background-color: #111111;
+    text-decoration: none;
+    border-radius: 40px;
+    margin: 10px;
+    transition: all 0.5s; /*アニメーション設定*/
+}
+.btn-s a {
+    padding: 10px 30px;
+    font-size: 0.8rem;
+}
+.btn-m a {
+    padding: 10px 40px;
+    font-size: 1rem;
+}
+.btn-l a {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+}
+.btn-red a {
+    background-image: url("../images/bg-l.webp");
+    background-size: cover;
+}
+footer {
+    background-color: #333333;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+footer .box {
+    padding: 2rem;
+}
+footer .box .img-logo {
+    width: 100px;
+    padding-bottom: 2rem;
+}
+footer ul {
+    padding-left: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+footer ul li a {
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+footer .center {
+    margin-bottom: 2rem;
+}
+footer .right {
+    max-width: 200px;
+    padding: 0 1rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+footer .right img {
+    border-radius: 1rem;
+}
+footer .copyright p {
+    color: #FFFFFF;
+    margin: 0;
+    padding-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        color: #333333;
+    }
+    .pc {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
+    header #logo {
+        width: 200px;
+        top: 40px;
+        left: 40px;
+    }
+    .rounded-nav {
+        position: fixed;
+        top: 40px; /* 上からの距離（必要に応じて調整） */
+        right: 40px; /* 右から40pxに固定 */
+        background-color: #f9fbfc;
+        border-radius: 999px;
+        padding: 1em 1.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        z-index: 1000; /* 他の要素より前に出すため */
+    }
+    .rounded-nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    .rounded-nav li {
+        width: 106px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+    .divider {
+        height: 1.5em;
+        width: 1px;
+        background-color: #b3d8ee;
+        margin: 0 0.55em;
+    }
+    .rounded-nav li:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 1.5em;
+        width: 1px;
+        background-color: #b3d8ee;
+    }
+    .rounded-nav a {
+        text-decoration: none;
+        color: #111;
+    }
+    .btn-s a:hover {
+        padding: 10px 40px;
+    }
+    .btn-m a:hover {
+        padding: 10px 50px;
+    }
+    .btn-l a:hover {
+        padding: 15px 50px;
+    }
+    footer .box {
+        width: 90%;
+        padding: 3rem 0;
+        margin: 0 auto;
+    }
+    footer .left {
+        width: 300px;
+        float: left;
+    }
+    footer .center {
+        width: 400px;
+        float: left;
+    }
+    footer .center ul {
+        width: 45%;
+        float: left;
+    }
+    footer .right {
+        width: 20%;
+        float: right;
+        padding: 0 1rem;
+    }
+    footer .copyright p {
+        display: block;
+        margin: 0;
+        padding-bottom: 2rem;
+    }
+}
