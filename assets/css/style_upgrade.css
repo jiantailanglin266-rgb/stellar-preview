@@ -19,60 +19,37 @@
 html { scroll-behavior: smooth; overflow-x: hidden; }
 
 /* =========================================================
-   TOP FV直下：二段レインボーマーキー（左右逆巻き・AI KW）
-   純CSSでシームレスループ。ホバーで一時停止。
+   全ページ下部：未来都市スカイライン アニメーション帯
+   （city-skyline.js が footer の直前に注入）
    ========================================================= */
-.ai-marquee {
+.city-band {
     position: relative;
     z-index: 2;
-    /* #main(中央寄せ)から画面幅いっぱいにブリード */
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    margin-top: 1rem;
-    margin-bottom: 4rem;
-    padding: 1.1rem 0;
+    width: 100%;
+    height: clamp(220px, 32vw, 360px);
+    margin-top: 3rem;
     overflow: hidden;
-    background: linear-gradient(180deg, rgba(11,31,58,.9), rgba(18,50,92,.9));
-    border-top: 1px solid rgba(255,255,255,.16);
-    border-bottom: 1px solid rgba(255,255,255,.16);
-    box-shadow: 0 24px 60px -34px rgba(11,31,58,.9);
+    background: linear-gradient(180deg,
+        rgba(171,207,223,0) 0%,
+        rgba(18,50,92,.72) 38%,
+        #0b1f3a 100%);
 }
-.ai-marquee__row { overflow: hidden; }
-.ai-marquee__row + .ai-marquee__row { margin-top: .55rem; }
-.ai-marquee__track {
-    display: flex;
-    width: max-content;
-    will-change: transform;
+.city-band__glow {
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    width: 80%;
+    height: 80%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at top, rgba(74,159,212,.45), transparent 62%);
+    pointer-events: none;
 }
-.ai-marquee__row--ltr .ai-marquee__track { animation: ai-marq 34s linear infinite; }
-.ai-marquee__row--rtl .ai-marquee__track { animation: ai-marq 34s linear infinite reverse; }
-.ai-marquee:hover .ai-marquee__track { animation-play-state: paused; }
-.ai-marquee__group { display: flex; flex: 0 0 auto; }
-@keyframes ai-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.ai-marquee__item {
-    display: inline-flex;
-    align-items: center;
-    flex: 0 0 auto;
-    font-family: "Arima", system-ui;
-    font-weight: 600;
-    font-size: clamp(1.05rem, 3.2vw, 1.8rem);
-    letter-spacing: 1px;
-    padding: 0 1.05rem;
-    color: hsl(var(--h, 200) 95% 63%);
-    text-shadow: 0 0 16px hsl(var(--h, 200) 95% 58% / .55);
-}
-.ai-marquee__item::after {
-    content: "✦";
-    margin-left: 1.05rem;
-    color: rgba(255,255,255,.35);
-    font-size: .62em;
-}
-@media (prefers-reduced-motion: reduce) {
-    .ai-marquee__track { animation: none !important; }
-    .ai-marquee__row--rtl .ai-marquee__track { transform: translateX(-30%); }
+.city-band canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 /* ---------------------------------------------------------
