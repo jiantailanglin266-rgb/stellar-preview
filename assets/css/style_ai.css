@@ -167,12 +167,8 @@
     overflow: hidden;
 }
 .ai-hero__particles {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
+    /* 全ページ共通の背景パーティクル(bg-particles.js)に統一したため非表示 */
+    display: none;
 }
 .ai-hero__inner {
     position: relative;
