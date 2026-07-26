@@ -1,9 +1,10 @@
 /* =========================================================
-   STELLAR | 全ページ下部 未来都市スカイライン (city-skyline.js)
-   footer の直前にアニメーション帯を注入して描画。
+   STELLAR | 未来都市スカイライン (city-skyline.js)
+   ・TOPページ … #top-finale-canvas（大型フィナーレ）を描画
+   ・その他ページ … footer 直前に帯(.city-band)を注入して描画
    （ビル群＋点滅する窓＋瞬く星）依存なしのバニラJS。
-   ※ 既にダークな最終セクション(.ai-final / .sb-final)を持つ
-      AIページでは重複回避のため注入しない。
+   ※ 既にダーク最終セクション(.ai-final / .sb-final)を持つ
+      AIページでは重複回避のため何もしない。
    ※ prefers-reduced-motion では静止画で描画。
    ========================================================= */
 (function () {
@@ -12,35 +13,15 @@
     var reduceMotion = window.matchMedia &&
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    function build() {
-        // 既に下部にダーク演出があるページはスキップ
-        if (document.querySelector(".ai-final, .sb-final")) return;
-        if (document.getElementById("city-skyline-canvas")) return;
-
-        var footer = document.querySelector("footer");
-        if (!footer) return;
-
-        var band = document.createElement("div");
-        band.className = "city-band";
-        band.setAttribute("aria-hidden", "true");
-
-        var glow = document.createElement("div");
-        glow.className = "city-band__glow";
-        band.appendChild(glow);
-
-        var canvas = document.createElement("canvas");
-        canvas.id = "city-skyline-canvas";
-        band.appendChild(canvas);
-
-        footer.parentNode.insertBefore(band, footer);
-
+    /* 指定canvasにスカイラインを描画（サイズはcanvas自身の表示領域に追従） */
+    function runSkyline(canvas) {
         var ctx = canvas.getContext("2d");
         var dpr = Math.min(window.devicePixelRatio || 1, 2);
         var w, h, buildings, stars, t = 0;
 
         function make() {
-            w = band.clientWidth;
-            h = band.clientHeight;
+            w = canvas.clientWidth || (canvas.parentNode && canvas.parentNode.clientWidth) || window.innerWidth;
+            h = canvas.clientHeight || (canvas.parentNode && canvas.parentNode.clientHeight) || 300;
             canvas.width = w * dpr;
             canvas.height = h * dpr;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -69,7 +50,6 @@
             t += 0.02;
             ctx.clearRect(0, 0, w, h);
 
-            // 星
             for (var s = 0; s < stars.length; s++) {
                 var st = stars[s];
                 var a = 0.3 + 0.35 * Math.sin(t + st.tw);
@@ -79,7 +59,6 @@
                 ctx.fill();
             }
 
-            // ビル
             for (var b = 0; b < buildings.length; b++) {
                 var bd = buildings[b];
                 var top = h - bd.h;
@@ -107,7 +86,36 @@
 
         make();
         window.addEventListener("resize", make);
-        draw(); // reduced-motion 時は静止1フレーム
+        draw();
+    }
+
+    function build() {
+        // 既に下部にダーク演出があるページはスキップ
+        if (document.querySelector(".ai-final, .sb-final")) return;
+
+        // TOP等：大型フィナーレ用のcanvasが用意されていればそれを描画
+        var manual = document.getElementById("top-finale-canvas");
+        if (manual) { runSkyline(manual); return; }
+
+        // それ以外：footer 直前に帯を注入して描画
+        if (document.getElementById("city-skyline-canvas")) return;
+        var footer = document.querySelector("footer");
+        if (!footer) return;
+
+        var band = document.createElement("div");
+        band.className = "city-band";
+        band.setAttribute("aria-hidden", "true");
+
+        var glow = document.createElement("div");
+        glow.className = "city-band__glow";
+        band.appendChild(glow);
+
+        var canvas = document.createElement("canvas");
+        canvas.id = "city-skyline-canvas";
+        band.appendChild(canvas);
+
+        footer.parentNode.insertBefore(band, footer);
+        runSkyline(canvas);
     }
 
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build);
